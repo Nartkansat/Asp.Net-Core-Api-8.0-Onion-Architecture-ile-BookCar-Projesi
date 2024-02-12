@@ -1,0 +1,50 @@
+﻿ 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("/Views/AdminLayout/AdminHeaderPartial.cshtml")
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @await Html.PartialAsync("/Views/AdminLayout/AdminNavbarPartial.cshtml")
+        
+        @await Html.PartialAsync("/Views/AdminLayout/AdminSidebarPartial.cshtml")
+        
+   
+        <div class="main-content">
+            @RenderBody()
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            2024 © CarBook | Tüm Hakları Saklıdır.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-right d-none d-sm-block">
+                                Design & Develop by Nart Kanşat
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+    @await Html.PartialAsync("/Views/AdminLayout/AdminScriptPartial.cshtml")
+
+
+</body>
+
+</html>
+
+

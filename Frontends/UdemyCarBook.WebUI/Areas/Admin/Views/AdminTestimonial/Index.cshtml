@@ -1,0 +1,55 @@
+﻿@model List<ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Referanslar</h4>
+                        <p class="card-subtitle mb-4">
+                            Referanslar ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ad Soyad</th>
+                                        <th>Başlık</th>
+                                        <th>Yorum</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td><img src="@item.ImageUrl" width="50" height="50" class="rounded-circle" /></td>
+                                            <td>@item.Name</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Comment</td>
+                                            <td><a href="/Admin/AdminTestimonial/RemoveTestimonial/@item.TestimonialID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/AdminTestimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminTestimonial/CreateTestimonial/" class="btn btn-primary">Yeni Referans Ekle</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

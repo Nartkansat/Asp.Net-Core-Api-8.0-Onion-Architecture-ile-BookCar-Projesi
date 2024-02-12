@@ -1,0 +1,53 @@
+﻿@model List<ResultPricingDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Ödeme Türleri</h4>
+                        <p class="card-subtitle mb-4">
+                            Araçların Ödeme Türleri(Saatlik,Günlük,Haftalık,Aylık) ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Kiralama Türü</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Name</td>
+                                            <td><a href="/Admin/AdminPricing/RemovePricing/@item.PricingID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/AdminPricing/UpdatePricing/@item.PricingID" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminPricing/CreatePricing/" class="btn btn-primary">Yeni Ödeme Türü Ekle</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

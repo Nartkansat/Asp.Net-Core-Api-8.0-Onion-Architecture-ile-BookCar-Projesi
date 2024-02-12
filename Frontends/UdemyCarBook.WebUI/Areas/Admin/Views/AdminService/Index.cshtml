@@ -1,0 +1,54 @@
+﻿@model List<ResultServiceDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Hizmetler</h4>
+                        <p class="card-subtitle mb-4">
+                            Hizmetler ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>Açıklama</th>
+                                        <th>Görsel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.IconUrl</td>
+                                            <td><a href="/Admin/AdminService/RemoveService/@item.ServiceID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/AdminService/UpdateService/@item.ServiceID" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminService/CreateService/" class="btn btn-primary">Yeni Hizmet Ekle</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

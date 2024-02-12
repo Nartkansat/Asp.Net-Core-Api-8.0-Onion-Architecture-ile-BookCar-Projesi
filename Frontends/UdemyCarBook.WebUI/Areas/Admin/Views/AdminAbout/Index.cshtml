@@ -1,0 +1,53 @@
+﻿@model List<ResultAboutDto>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Anasayfa Hakkımızda Alanı</h4>
+                        <p class="card-subtitle mb-4">
+                            Hakkımmızda Bilgilerini Düzenleyebilirsiniz. Bu alanda sadece düzenleme yapabilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Başlık</th>
+                                        <th>Açıklama</th>
+                                        <th>Görsel</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.title</td>
+                                            <td>@item.description</td>
+                                            <td>@item.imageUrl</td>
+                                            <td><a href="/Admin/AdminAbout/UpdateAbout/@item.aboutID" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

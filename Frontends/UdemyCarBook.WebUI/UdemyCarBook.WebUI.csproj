@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\carbook-master\.DS_Store" />
+    <None Include="wwwroot\carbook-master\css\.DS_Store" />
+    <None Include="wwwroot\carbook-master\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\carbook-master\css\css\.DS_Store" />
+    <None Include="wwwroot\carbook-master\fonts\.DS_Store" />
+    <None Include="wwwroot\carbook-master\fonts\flaticon\.DS_Store" />
+    <None Include="wwwroot\carbook-master\fonts\flaticon\font\.DS_Store" />
+    <None Include="wwwroot\carbook-master\fonts\ionicons\fonts\.DS_Store" />
+    <None Include="wwwroot\carbook-master\images\.DS_Store" />
+    <None Include="wwwroot\carbook-master\js\.DS_Store" />
+    <None Include="wwwroot\carbook-master\scss\.DS_Store" />
+    <None Include="wwwroot\carbook-master\scss\bootstrap\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.3.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UdemyCarBook.Dto\UdemyCarBook.Dto.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
+</Project>

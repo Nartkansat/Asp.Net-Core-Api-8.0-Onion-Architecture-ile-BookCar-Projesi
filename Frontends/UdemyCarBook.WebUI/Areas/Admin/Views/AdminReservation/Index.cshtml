@@ -1,0 +1,57 @@
+﻿@model List<CreateReservationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Rezervasyonlar</h4>
+                        <p class="card-subtitle mb-4">
+                            Rezervasyon ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ad Soyad</th>
+                                        <th>Email</th>
+                                        <th>Ehliyet Yılı</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Name @item.Surname</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.DriverLicenseYear</td>
+
+                                            <td><a href="/Admin/AdminReservation/RemoveAuthor/@item.CarID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/AdminReservation/UpdateAuthor/@item.CarID" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminReservation/CreateAuthor/" class="btn btn-primary">Yeni Rezervasyon Ekle</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

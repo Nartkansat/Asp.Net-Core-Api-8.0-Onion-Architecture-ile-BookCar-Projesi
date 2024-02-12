@@ -1,0 +1,58 @@
+﻿@model List<ResultBannerDto>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    
+}
+
+
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Anasayfa Banner Alanı</h4>
+                        <p class="card-subtitle mb-4">
+                            Anasayfanın Banner Alanında Bulunan Bilgileri Düzenleyebilirsiniz. Bu alanda sadece düzenleme yapabilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Başlık</th>
+                                        <th>Açıklama</th>
+                                        <th>Video Url</th>
+                                        <th>Video Açıklama</th>
+                                        <th>Güncelle</th>
+                                        <th>Youtube'da Aç</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Title</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.VideoUrl</td>
+                                            <td>@item.VideoDescription</td>
+                                            <td><a href="/Admin/AdminBanner/UpdateBanner/@item.BannerID" class="btn btn-success">Güncelle</a></td>
+                                            <td><a href="#" class="btn btn-warning">Youtube'da Aç</a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
